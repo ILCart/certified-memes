@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,35 @@
     <link rel="stylesheet" href="theme.css">
     <script src="main.js"></script>
 </head>
-<body>
-    <img src="certificates/mental.png" alt="" id="certDisplay">
 
-    <form id="input" class="flex">
-        <select name="style" id="certstyle">
-        </select>
-        <label for="name">Name of recipient</label>
-        <input type="text" name="Name" id="name" required placeholder="Name">
-        <button type="submit" id="submit">Generate Certificate</button>
-    </form>
+<body>
+    <main id="main" class="flex">
+        <h1 class="full flex">Certificate Generator</h1>
+        <section id="cert" class="spacedcontainer full">
+            <h3>Certificate Preview</h3>
+            <img src="certificates/mental.png" alt="" id="certDisplay">
+        </section>
+        
+        <section id="containform" class="spacedcontainer full">
+            <form id="input" class="flex third flex">
+                <section id="leftform" class="half formside flex">
+                    <label for="certstyle">Select style</label>
+                    <select name="style" id="certstyle"></select>
+                    <label for="name">Name of recipient</label>
+                    <input type="text" name="Name" id="name" required placeholder="Name">
+                    
+                </section>
+                <section id="rightform" class="half formside flex">
+                    
+                <label for="sign">Signature on certificate</label>
+                <input type="text" name="Signature" id="sign" required placeholder="Signature">
+                <label for="date">Date awarded</label>
+                <input type="date" name="Date" id="date" required value="2024-02-07">
+                <button type="submit" id="submit">Generate Certificate</button>
+                </section>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>

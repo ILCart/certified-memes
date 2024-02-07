@@ -2,9 +2,36 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .flex{
     display: flex;
     flex-flow: row wrap;
+}
+#input{
+    justify-content: space-between;
+}
+
+.third{
+    width: 33.33%;
+}
+.spacedcontainer{
+    padding: 0 20% 0 20%;
+}
+#cert > img{
+    border: 5px black solid;
+}
+
+.full{
+    width: 100%;
+}
+.half{
+    width: 50%;
+}
+h1{
+    justify-content:  center;
+}
+.formside{
+    flex-flow: column wrap;
 }
