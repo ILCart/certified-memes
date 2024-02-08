@@ -5,33 +5,91 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.flex{
+.flex {
     display: flex;
     flex-flow: row wrap;
 }
-#input{
+
+#input {
+    width: 50%;
     justify-content: space-between;
 }
 
-.third{
+.third {
     width: 33.33%;
 }
-.spacedcontainer{
-    padding: 0 20% 0 20%;
+
+.spacedcontainer {
+    padding: 0 30% 0 30%;
+    justify-content: space-around;
 }
-#cert > img{
+
+#cert>img {
     border: 5px black solid;
 }
 
-.full{
+#cert {
+    position: relative;
+}
+
+#certDisplay {
     width: 100%;
 }
-.half{
+
+.full {
+    width: 100%;
+}
+
+.half {
     width: 50%;
 }
-h1{
-    justify-content:  center;
+
+h1 {
+    justify-content: center;
 }
-.formside{
+
+.formside {
     flex-flow: column wrap;
+}
+
+h3 {
+    justify-content: center;
+}
+
+.floating {
+    position: absolute;
+}
+
+#signatureText{ 
+    right: 0;
+}
+#recipientText{
+    top: 50%;
+}
+.certtext{
+    font-size: 3rem;
+}
+@media print {
+    #containform {
+        display: none;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    #cert {
+        padding: none;
+        display: flex !important;
+    }
+
+    #cert>img {
+        width: 100vw !important;
+        height: 100vh !important;
+        border: none;
+    }
 }
