@@ -20,20 +20,20 @@
 }
 
 .spacedcontainer {
-    padding: 0 30% 0 30%;
     justify-content: space-around;
 }
 
 #cert>img {
-    border: 5px black solid;
+    border: .5rem black solid;
 }
 
 #cert {
     position: relative;
+    height: 100%;
 }
 
 #certDisplay {
-    width: 100%;
+    width: 50vw;
 }
 
 .full {
@@ -59,15 +59,39 @@ h3 {
 .floating {
     position: absolute;
 }
+#sigdate{
+    justify-content: space-between;
+    width: 100%;
+}
+.field{
+    flex-flow: column;
+    align-items: center;
+}
+#titleText{
+    margin-bottom: 30%;
+}
+.field > p:first-of-type{
+    justify-content: center;
+    border-bottom: .2rem solid black;
+    padding-bottom: .2rem;
+    width: 90%;
+}
 
-#signatureText{ 
-    right: 0;
+#recipientField{
+    width: 100%;
+    margin-bottom: 20%;
 }
-#recipientText{
-    top: 50%;
+#recipientField #nameText{
+    width: 100%;
 }
-.certtext{
-    font-size: 3rem;
+#certText{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    
 }
 @media print {
     #containform {
@@ -80,11 +104,6 @@ h3 {
 
     .hide {
         display: none !important;
-    }
-
-    #cert {
-        padding: none;
-        display: flex !important;
     }
 
     #cert>img {

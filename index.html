@@ -14,10 +14,26 @@
         <h1 class="full flex hide">Certificate Generator</h1>
         <h3 class="full flex hide">Certificate Preview</h3>
         <section id="cert" class="spacedcontainer full flex">
-            <p class="flex floating certtext" id="recipientText"></p>
-            <p class="flex floating certtext" id="dateText">2</p>
-            <p class="flex floating certtext" id="signatureText">3</p>
-            <img src="certificates/mental.png" alt="" id="certDisplay">
+            <section id="certText" class="flex">
+                <p id="certof">Certificate of</p>
+                <p id="titleText">top text</p>
+                <span id="recipientField" class="flex field">
+                    <p id="recipientText" class="flex">Joe Boe</p>
+                    <p id="descText">For blah blah</p>
+                </span>
+                <section id="sigdate" class="flex">
+                    <span class="flex field third">
+                        <p id="dateText" class="flex">1/1/23</p>
+                        <p>Date</p>
+                    </span>
+                    <span class="flex field third">
+                        <p id="signatureText"  class="flex">Signature</p>
+                        <p>Sign</p>
+                    </span>
+                </section>
+
+            </section>
+            <img src="certificates/oriental.png" alt="" id="certDisplay">
         </section>
 
         <section id="containform" class="spacedcontainer full flex">

@@ -1,14 +1,15 @@
 let certificateStyles = {
     "mentalfortitude": {
-        name: "Mental Fortitude",
-        path: "certificates/mental.png",         
+        disname: "Ryan Posture",
+        title: "Ryan Posture",
+        desc: "For their shrimp like posture",
+        path: "certificates/oriental.png",
     },
-    "posture": {
-        name: "Ryan Posture",
-        path: "certificates/ryan.png"
-    },
-    "option3": {
-        name: "Somethibng"
+    "bl": {
+        disname: "Ryan Postures",
+        title: "Certificate of Ryan Posture",
+        desc: "For their shrimp like posture",
+        path: "certificates/oriental.png",
     }
 }
 
@@ -16,41 +17,49 @@ function createOption(name = "option", cert) {
     if (cert == null) return;
     let op = document.createElement("option")
     op.value = name
-    op.innerText = cert.name
+    op.innerText = cert.disname
     return op
 }
 function updateDisplay(certValue) {
+    console.log(certValue)
     const certDisplay = document.getElementById("certDisplay");
     const certData = certificateStyles[certValue];
-    if (certDisplay != null && certData != null){
+    if (certDisplay != null && certData != null) {
+        for (const [key, data] of Object.entries(certData)) {
+            const elementCurrent = document.getElementById(`${key}Text`);
+
+            if (elementCurrent != null) {
+                setText(elementCurrent, data);
+            }
+        }
         certDisplay.setAttribute("src", certData.path);
         // console.log(certData)
     }
 }
 
-function getDate(){
+function getDate() {
     const date = new Date;
-    const day = date.getDate(), month = date.getMonth()+1, year = date.getFullYear();
+    const day = date.getDate(), month = date.getMonth() + 1, year = date.getFullYear();
     return `${month}/${day}/${year}`;
 }
 
-function setText(element,value){
-    if(element){
+function setText(element, value) {
+    if (element && value != "") {
         element.innerText = value;
     }
 }
 
 
-function setCertificate(current, data){
-    //console.log(data)
+function setCertificate(current, data) {
+    updateDisplay(current);
+    console.log(data);
     current = certificateStyles[current];
-    if(current == null) return;
-    for (const [field,fieldVal] of data) {
-        console.log(field,fieldVal)
+    if (current == null) return;
+    for (const [field, fieldVal] of Object.entries(data)) {
         const elementCurrent = document.getElementById(`${field}Text`);
-        
-        if(elementCurrent != null) {
-                setText(elementCurrent,fieldVal);
+
+        if (elementCurrent != null) {
+            setText(elementCurrent, fieldVal);
         }
     }
 }
@@ -60,8 +69,7 @@ function updateCert() {
     let formData = new FormData(input);
     for (const [key, val] of formData.entries()) {
         if (key == "style") {
-            updateDisplay(val);
-            setCertificate(val,formData.entries());
+            setCertificate(val, Object.fromEntries(formData.entries()));
         }
     }
     // const nameInput = document.getElementById("name");
@@ -74,10 +82,11 @@ function updateCert() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const styleSelector = document.getElementById("certstyle");
-    setText(document.getElementById("dateText"),getDate());
-    updateCert();
+
     const input = document.getElementById("input");
     if (styleSelector != null) {
+        setText(document.getElementById("dateText"), getDate());
+        updateDisplay(Object.keys(certificateStyles)[0]);
         if (input != null) {
             input.addEventListener("change", updateCert);
             input.addEventListener("submit", (e) => e.preventDefault());
