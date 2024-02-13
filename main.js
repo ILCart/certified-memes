@@ -1,15 +1,20 @@
 let certificateStyles = {
     "mentalfortitude": {
+        disname: "Mental Fortitude",
+        title: "Mental Fortitude",
+        desc: "For solving day 5 of Advent of Code",
+        path: "certificates/oriental.png",
+    },
+    "posture": {
         disname: "Ryan Posture",
         title: "Ryan Posture",
         desc: "For their shrimp like posture",
-        path: "certificates/oriental.png",
-    },
-    "bl": {
-        disname: "Ryan Postures",
-        title: "Certificate of Ryan Posture",
-        desc: "For their shrimp like posture",
-        path: "certificates/oriental.png",
+        path: "certificates/gold.png",
+    },"nolife": {
+        disname: "No Life",
+        title: "Cave Living",
+        desc: '"Go outside"',
+        path: "certificates/grey.png",
     }
 }
 

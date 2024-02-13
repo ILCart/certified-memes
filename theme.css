@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Glegoo:wght@400;700&family=Passions+Conflict&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,11 +6,24 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#certof{
+    font-family: "Passions Conflict", cursive;
+    font-weight: normal;
+    font-style:normal;
+    font-size: 8rem;
+}
 .flex {
     display: flex;
     flex-flow: row wrap;
 }
+p{
+    font-size: 1.5rem;
+}
+#signatureText{
+    font-family: "Alex Brush", cursive;
+    font-weight: lighter;
 
+}
 #input {
     width: 50%;
     justify-content: space-between;
@@ -68,7 +82,11 @@ h3 {
     align-items: center;
 }
 #titleText{
-    margin-bottom: 30%;
+    margin-bottom: 10%;
+    font-size: 2rem;
+    font-family: "Glegoo", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 .field > p:first-of-type{
     justify-content: center;
@@ -79,7 +97,7 @@ h3 {
 
 #recipientField{
     width: 100%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 #recipientField #nameText{
     width: 100%;
